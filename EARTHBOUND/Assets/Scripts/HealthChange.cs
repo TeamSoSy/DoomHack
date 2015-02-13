@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HealthChange : MonoBehaviour {
-
+	public Collider2D other;
 	public int healthChange;
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,7 @@ public class HealthChange : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D( Collider2D collidedObject )
-	{   if (collidedObject.name.Equals ("Player")) {
+	{   if (collidedObject.name.Equals (other.name)) {
 			Debug.LogError ("HP + " + healthChange + " from " + this.name + " (not implemented yet)");
 			collidedObject.SendMessage ("changeHP", healthChange);
 		}
