@@ -37,11 +37,11 @@ public class Controller : MonoBehaviour {
 	}
 
 	private bool endKeyboardInput() {
-		return Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) 
-			|| Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) 
-			|| Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)
-			|| Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)
-				|| Input.GetKeyUp(KeyCode.Space);
+		return Input.GetKeyUp (KeyCode.LeftArrow) || Input.GetKeyUp (KeyCode.A) 
+			|| Input.GetKeyUp (KeyCode.RightArrow) || Input.GetKeyUp (KeyCode.D) 
+			|| Input.GetKeyUp (KeyCode.UpArrow) || Input.GetKeyUp (KeyCode.W)
+			|| Input.GetKeyUp (KeyCode.DownArrow) || Input.GetKeyUp (KeyCode.S)
+			|| Input.GetKeyUp (KeyCode.Space);
 	}
 
 	private bool moveRightInput() {
@@ -61,6 +61,6 @@ public class Controller : MonoBehaviour {
 	}
 
 	private bool jumpInput() { 
-		return Input.GetKeyUp (KeyCode.Space);
+		return Input.GetKeyDown (KeyCode.Space);
 	}
 }
