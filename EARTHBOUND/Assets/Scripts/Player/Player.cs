@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	public float acceleration = 10f;
 	public float jumpForce = 100;
 	public float maxSpeed = 10f;
-
+	 
 	private float gravityAcceleration = -9.8f;
 	private Animator animator;
 	private const string animState = "AnimState"; //This should probably be a constant somewhere throughout app
@@ -19,11 +19,6 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(state != PlayerState.Ducking && rigidbody2D.velocity.x == 0 && rigidbody2D.velocity.y == 0) {
-			state = PlayerState.Standing;
-		}
-
 		switch (state) {
 		case PlayerState.Moving:
 			animator.SetInteger (animState, AnimationState.PlayerWalkAnimation.GetHashCode());
