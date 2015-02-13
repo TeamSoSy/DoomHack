@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		directionMultiplier = 1;
+
 	}
 	
 	// Update is called once per frame

@@ -1,16 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\EnemyController.cs">
     <Files>
-      <File FileName="../../SuperJetroid2DDemo/Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
-      <File FileName="../../SuperJetroid2DDemo/Assets/Scripts/Player.cs" Line="96" Column="4" />
-      <File FileName="Assets/Scripts/Player/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyController.cs" Line="13" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> 2e3127a5981921b99d0214d5073a3cc94600088b
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
