@@ -16,7 +16,7 @@ public class DestroyOnPlayerCollision : MonoBehaviour {
 	void OnTriggerEnter2D( Collider2D collidedObject )
 	{   if (collidedObject.name.Equals ("Player")) {
 			Debug.LogError ("Destroy " + this.name);
-			Destroy (this);
+			Destroy (gameObject);
 		}
 	} 
 }
