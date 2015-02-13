@@ -24,23 +24,27 @@ public class Player : MonoBehaviour {
 		var currentVelocityX = Mathf.Abs(rigidbody2D.velocity.x);
 		var currentVelocityY = Mathf.Abs(rigidbody2D.velocity.y);
 
-		if(Input.GetKey(KeyCode.RightArrow)) {
+		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
 			if(currentVelocityX < maxSpeed) {
 				accelerationX = acceleration;
 			}
 		}
 
-		if(Input.GetKey(KeyCode.LeftArrow)) {
+		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
 			if(currentVelocityX > -maxSpeed) {
 				accelerationX = -acceleration;
 			}
 		}
 
-		if(Input.GetKey(KeyCode.DownArrow)) {
+		if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
 			// dont know what to do here
 		}
 
-		if(Input.GetKeyUp(KeyCode.UpArrow)) {
+		if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+			// dont know what to do here
+		}
+
+		if(Input.GetKeyUp(KeyCode.Space)) {
 			//test if colliding with solid layer!
 			accelerationY = jumpAcceleration * gravityAcceleration;
 		}
