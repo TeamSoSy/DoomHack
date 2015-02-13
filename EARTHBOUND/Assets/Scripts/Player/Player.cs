@@ -37,10 +37,6 @@ public class Player : MonoBehaviour {
 			animator.SetInteger (animState, PlayerAnimState.PlayerIdleAnimation.GetHashCode());
 			break;
 		}
-
-		if (onGround()) {
-			jumpCount = 0;
-		}
 	}
 
 	private bool hasResource() {
@@ -67,10 +63,15 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Jump() {
-		if (onGround() || hasResource() && jumpCount < 2) {
+		if (onGround ()) {
+			jumpCount = 0;
+		} else if (hasResource()) {
+			jumpCount++;
+		}
+
+		if (jumpCount < 2) {
 			ApplyForce (0, (rigidbody2D.mass * -gravityAcceleration) + jumpForce);//Cancel out gravity and apply jump force
 			state = PlayerState.Jumping;
-			jumpCount++;
 		}
 	}
 
