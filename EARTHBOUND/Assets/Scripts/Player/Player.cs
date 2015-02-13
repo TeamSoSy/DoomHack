@@ -101,10 +101,6 @@ public class Player : MonoBehaviour {
 	public PlayerState getState() {
 		return state;
 	}
-
-	public void changeHP(float HP){
-		Debug.Log ("jasflksajfdsajf");
-	}
 }
 
 //Should map to AnimState in animator for Player object

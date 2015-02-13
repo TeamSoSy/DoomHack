@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyController : MonoBehaviour {
+public class HorizontalEnemyController : MonoBehaviour {
 	public Transform sightStart, sightEnd;
 	public float walkingSpeed = 0.05f;
 	private bool collision;
