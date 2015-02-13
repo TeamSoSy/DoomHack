@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(rigidbody2D.velocity.x == 0 && rigidbody2D.velocity.y == 0) {
+		if(state != PlayerState.Ducking && rigidbody2D.velocity.x == 0 && rigidbody2D.velocity.y == 0) {
 			state = PlayerState.Standing;
 		}
 
@@ -43,6 +43,10 @@ public class Player : MonoBehaviour {
 
 	public void ApplyForce(float forceX, float forceY) {
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
+	}
+
+	public void StandUp() {
+		state = PlayerState.Standing;
 	}
 
 	public void Duck() {

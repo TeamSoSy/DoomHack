@@ -12,23 +12,55 @@ public class Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+		if(moveRightInput()) {
 			player.MoveRight();
 		}
 		
-		if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+		if(moveLeftInput()) {
 			player.MoveLeft();
 		}
 		
-		if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+		if(duckInput()) {
 			player.Duck();
 		}
 		
-		if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+		if(moveUpInput()) {
 		}
 		
-		if(Input.GetKeyUp(KeyCode.Space)) {
+		if(jumpInput()) {
 			player.Jump();
 		}
+
+		if (endKeyboardInput ()) {
+			player.StandUp();
+		}
+	}
+
+	private bool endKeyboardInput() {
+		return Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A) 
+			|| Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) 
+			|| Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)
+			|| Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)
+				|| Input.GetKeyUp(KeyCode.Space);
+	}
+
+	private bool moveRightInput() {
+		return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+	}
+
+	private bool moveLeftInput() {
+		return Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.A);
+	}
+
+	private bool moveUpInput() {
+		return Input.GetKey (KeyCode.UpArrow) || Input.GetKey (KeyCode.W);
+	}
+
+	private bool duckInput() {
+		return Input.GetKey (KeyCode.DownArrow) || Input.GetKey (KeyCode.S);
+	}
+
+	private bool jumpInput() { 
+		return Input.GetKeyUp (KeyCode.Space);
 	}
 }
