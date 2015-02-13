@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <None Include="Assets\Textures\UI\DEBUG_REMOVE.txt" />
      <None Include="Assets\Textures\Player\DEBUG_REMOVE.txt" />
