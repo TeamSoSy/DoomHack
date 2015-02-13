@@ -70,8 +70,8 @@ public class Player : MonoBehaviour {
 		if (onGround() || hasResource() && jumpCount < 2) {
 			ApplyForce (0, (rigidbody2D.mass * -gravityAcceleration) + jumpForce);//Cancel out gravity and apply jump force
 			state = PlayerState.Jumping;
+			jumpCount++;
 		}
-		jumpCount++;
 	}
 
 	public void MoveRight() {
