@@ -2,11 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\DestroyOnPlayerCollision.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\Enemy\EnemyController.cs" Line="4" Column="29" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\HealthChange.cs" Line="17" Column="2" />
       <File FileName="Assets\Scripts\Enemy\DestroyOnPlayerCollision.cs" Line="13" Column="2" />
+=======
+      <File FileName="Assets/Scripts/Player/Player.cs" Line="54" Column="3" />
+>>>>>>> c942feb4f68c1cae0401a7ad9b477af530185101
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

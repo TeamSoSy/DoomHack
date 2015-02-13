@@ -46,11 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Controller.cs" />
      <Compile Include="Assets\Scripts\Enemy\DestroyOnPlayerCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\HealthChange.cs" />
+=======
+     <Compile Include="Assets\Scripts\Controller.cs" />
+>>>>>>> c942feb4f68c1cae0401a7ad9b477af530185101
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <None Include="Assets\Textures\UI\DEBUG_REMOVE.txt" />
      <None Include="Assets\Textures\Player\DEBUG_REMOVE.txt" />
