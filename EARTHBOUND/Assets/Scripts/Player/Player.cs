@@ -20,11 +20,8 @@ public class Player : MonoBehaviour {
 		var currentVelocityY = Mathf.Abs(rigidbody2D.velocity.y);
 
 		if(Input.GetKey(KeyCode.RightArrow)) {
-			Debug.Log("Right key down");
 			if(currentVelocityX < maxSpeed) {
 				accelerationX += acceleration;
-				Debug.Log("Adding acceleration: " + acceleration);
-			
 			}
 		}
 
@@ -46,6 +43,9 @@ public class Player : MonoBehaviour {
 	}
 
 	private void ApplyForce(float forceX, float forceY) {
+		if (forceX != 0) {
+			transform.localScale = new Vector3 (forceX > 0 ? 1 : -1, 1);
+		}
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
 	}
 }
