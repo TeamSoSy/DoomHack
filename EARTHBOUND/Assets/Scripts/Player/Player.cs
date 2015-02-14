@@ -85,19 +85,6 @@ public class Player : MonoBehaviour {
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
 	}
 
-	void OnTriggerEnter2D(Collider2D objectFound) {
-		switch (objectFound.tag.ToLower()) {
-		case "resource":
-			Debug.Log("Found resource.");
-			break;
-		case "dangerous":
-			Debug.Log("Hit dangerous item.");
-			break;
-		default:
-			break;
-		}
-	}
-
 	public void StandUp() {
 		state = PlayerState.Standing;
 	}
