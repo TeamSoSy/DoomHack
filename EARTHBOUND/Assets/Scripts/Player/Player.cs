@@ -9,8 +9,18 @@ public class Player : MonoBehaviour {
 	public GameObject endPoint;
 	public float maxSecondsBeforeDying = 2;
 
-	private float gravityAcceleration = -9.8f;
-
+	private const float gravityAcceleration = -9.8f;
+	private Vector2 standingBoxColliderSize {
+		get {
+			return new Vector2 (0.66f, 0.9f);
+		}
+	}
+	private Vector2 duckedBoxColliderSize {
+		get {
+			return new Vector2 (0.66f, 0.7f);
+		}
+	}
+	
 	private Animator animator;
 	private const string animState = "AnimState"; //This should probably be a constant somewhere throughout app
 
@@ -39,6 +49,7 @@ public class Player : MonoBehaviour {
 			break;
 		case PlayerState.Standing:
 			animator.SetInteger (animState, PlayerAnimState.PlayerIdleAnimation.GetHashCode());
+			gameObject.GetComponent<BoxCollider2D> ().size = standingBoxColliderSize;
 			break;
 		}
 
@@ -74,6 +85,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Duck() {
+		gameObject.GetComponent<BoxCollider2D> ().size = duckedBoxColliderSize;
 		state = PlayerState.Ducking;
 	}
 
