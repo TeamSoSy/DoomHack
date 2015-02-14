@@ -18,7 +18,8 @@ public class Health : MonoBehaviour {
 		this.HP += HP; 
 		Debug.Log (this.name + " health:" + this.HP);
 		if (this.HP <= 0) {
-			Destroy (gameObject);
+			Application.LoadLevel ("GameOver");
+//			Destroy (gameObject);
 			Debug.Log (this.name + "destroyed");
 		}
 	}
