@@ -7,13 +7,17 @@ public class Player : MonoBehaviour {
 	public float jumpForce = 100;
 	public float maxSpeed = 10f;
 	public GameObject endPoint;
-	 
+	public float maxSecondsBeforeDying = 2;
+
 	private float gravityAcceleration = -9.8f;
+
 	private Animator animator;
 	private const string animState = "AnimState"; //This should probably be a constant somewhere throughout app
 
 	private PlayerState state;
 	private int jumpCount = 0;
+
+	private float timeSinceOnGroundSeconds = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +40,17 @@ public class Player : MonoBehaviour {
 		case PlayerState.Standing:
 			animator.SetInteger (animState, PlayerAnimState.PlayerIdleAnimation.GetHashCode());
 			break;
+		}
+
+		if (!onGround ()) {
+			timeSinceOnGroundSeconds += Time.deltaTime;
+		} else {
+			timeSinceOnGroundSeconds = 0;
+		}
+
+		if (timeSinceOnGroundSeconds > maxSecondsBeforeDying) {
+			Destroy (gameObject);
+			Debug.Log("Player has died D:");
 		}
 	}
 
