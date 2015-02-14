@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnBat : MonoBehaviour {
-
-	public Transform bat;
+public class SpawnEnemy : MonoBehaviour {
+	public int x;
+	public int y;
+	public Transform enemy;
 	public GameObject player;
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,6 @@ public class SpawnBat : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D( Collider2D collidedObject ) {
-		Instantiate (bat, new Vector3 (player.transform.position.x+10, player.transform.position.y, 0), Quaternion.identity);
-		Debug.Log ("hi");
+		Instantiate (enemy, new Vector3 (player.transform.position.x+x, player.transform.position.y+y, 0), Quaternion.identity);
 	}
 }

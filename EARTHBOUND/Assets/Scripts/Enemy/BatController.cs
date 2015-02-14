@@ -6,7 +6,7 @@ public class BatController : MonoBehaviour {
 	private float xVelocity = -0.2f;
 	// Use this for initialization
 	void Start () {
-		Destroy (gameObject, 2);
+		Destroy (gameObject, 5);
 	}
 	// Update is called once per frame
 	void Update () {
