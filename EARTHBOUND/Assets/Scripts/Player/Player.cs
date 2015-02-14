@@ -65,9 +65,14 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	private void checkForResources() {
+	
+	}
+
 	private bool hasResource() {
 		return true;
 	}
+
 
 	private bool onGround() {
 		if (!endPoint) {
@@ -76,8 +81,21 @@ public class Player : MonoBehaviour {
 		return Physics2D.Linecast(transform.position, endPoint.transform.position, 1 << LayerMask.NameToLayer ("Solid"));
 	}
 
-	public void ApplyForce(float forceX, float forceY) {
+	private void ApplyForce(float forceX, float forceY) {
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
+	}
+
+	void OnTriggerEnter2D(Collider2D objectFound) {
+		switch (objectFound.tag.ToLower()) {
+		case "resource":
+			Debug.Log("Found resource.");
+			break;
+		case "dangerous":
+			Debug.Log("Hit dangerous item.");
+			break;
+		default:
+			break;
+		}
 	}
 
 	public void StandUp() {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyOnPlayerCollision : MonoBehaviour {
+public class DestructableObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +13,8 @@ public class DestroyOnPlayerCollision : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter2D( Collider2D collidedObject )
-	{   if (collidedObject.name.Equals ("Player")) {
+	void OnTriggerEnter2D( Collider2D collidedObject ) {
+		if (collidedObject.name.Equals ("Player")) {
 			Debug.LogError ("Destroy " + this.name);
 			Destroy (gameObject);
 		}
