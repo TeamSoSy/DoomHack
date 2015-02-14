@@ -7,13 +7,17 @@ public class Player : MonoBehaviour {
 	public float jumpForce = 100;
 	public float maxSpeed = 10f;
 	public GameObject endPoint;
-	 
+	public float maxSecondsBeforeDying = 2;
+
 	private float gravityAcceleration = -9.8f;
+
 	private Animator animator;
 	private const string animState = "AnimState"; //This should probably be a constant somewhere throughout app
 
 	private PlayerState state;
 	private int jumpCount = 0;
+
+	private float timeSinceOnGroundSeconds = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -38,8 +42,15 @@ public class Player : MonoBehaviour {
 			break;
 		}
 
-		if (onGround()) {
-			jumpCount = 0;
+		if (!onGround ()) {
+			timeSinceOnGroundSeconds += Time.deltaTime;
+		} else {
+			timeSinceOnGroundSeconds = 0;
+		}
+
+		if (timeSinceOnGroundSeconds > maxSecondsBeforeDying) {
+			Destroy (gameObject);
+			Debug.Log("Player has died D:");
 		}
 	}
 
@@ -67,10 +78,15 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Jump() {
-		if (onGround() || hasResource() && jumpCount < 2) {
+		if (onGround ()) {
+			jumpCount = 0;
+		} else if (hasResource()) {
+			jumpCount++;
+		}
+
+		if (jumpCount < 2) {
 			ApplyForce (0, (rigidbody2D.mass * -gravityAcceleration) + jumpForce);//Cancel out gravity and apply jump force
 			state = PlayerState.Jumping;
-			jumpCount++;
 		}
 	}
 
